@@ -1,0 +1,25 @@
+int main(){
+
+int n, c, k, current_count, highest_count; 
+current_count = 0;
+highest_count = 0;
+scanf("%d",&n);
+for (c = 63; c >= 0; c--)
+{
+    k = n >> c;
+
+    if (k & 1) {
+        current_count++;
+        // printf("1");
+    } else { 
+        // printf("0");
+        if (current_count > highest_count)
+            highest_count = current_count;
+        current_count = 0;
+    }
+}
+// printf("\n");
+printf("%d\n", highest_count);
+
+return 0;
+}
